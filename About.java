@@ -3,12 +3,16 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class About extends JFrame implements ActionListener {
+    // Variáveis label para guardar o texto
     JLabel appName;
     JLabel version;
     JLabel platform;
     JLabel enviroment;
     JLabel developers;
+
+    // Painel do texto
     JPanel textPanel;
+    // Painel do botão OK 
     JPanel buttonPanel;
 
     public About() {
@@ -16,11 +20,14 @@ public class About extends JFrame implements ActionListener {
         this.setFrameConfiguration();
         this.setTextPanel();
         this.setButtonPanel();
+
+        // Adicionando os paineis ao frame
         this.getContentPane().add(textPanel, BorderLayout.CENTER);
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
         this.getContentPane().add(new JLabel("      "), BorderLayout.WEST);
     }
 
+    // Setters
     public void setFrameConfiguration() {
         setVisible(true);
         setResizable(false);
@@ -30,11 +37,14 @@ public class About extends JFrame implements ActionListener {
     }
 
     public void setTextPanel() {
+        // Definindo as variáveis label
         setAppName("DocText Analyzer");
         setVersion("Verssion: 1.0.0");
         setPlatform("Platform: Java 7 / Swing");
         setEnviroment("Enviroment: Visual Studio Code");
         setDevelopers("Developers: Koda, Kleber");
+
+        // Adicionando os labels ao painel de texto
         textPanel = new JPanel();
         textPanel.setLayout(new GridLayout(5,1));
         textPanel.add(appName); 
@@ -45,8 +55,11 @@ public class About extends JFrame implements ActionListener {
     }
 
     public void setButtonPanel() {
+        // Iniciando o botão OK e adicionando a função de escuta
         JButton button = new JButton("Ok");
         button.addActionListener(this);
+
+        // Definindo o painel do botão OK
         buttonPanel = new JPanel();
         buttonPanel.setBackground(new Color(204,204,204));
         buttonPanel.setLayout(new FlowLayout());
@@ -73,6 +86,7 @@ public class About extends JFrame implements ActionListener {
         this.developers = new JLabel(developers);
     }
 
+    // Getters
     public JPanel getTextPanel() {
         return textPanel;
     }
@@ -97,6 +111,7 @@ public class About extends JFrame implements ActionListener {
         return enviroment;
     }
 
+    // Ações !!!
     @Override
     public void actionPerformed(ActionEvent e) {
         dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
