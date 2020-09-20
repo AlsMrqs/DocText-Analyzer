@@ -9,11 +9,11 @@ public class About extends JFrame implements ActionListener {
     JLabel platform;
     JLabel enviroment;
     JLabel developers;
-
     // Painel do texto
     JPanel textPanel;
     // Painel do botão OK 
     JPanel buttonPanel;
+
 
     public About() {
         super("DocText Analyzer");
@@ -26,6 +26,7 @@ public class About extends JFrame implements ActionListener {
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
         this.getContentPane().add(new JLabel("      "), BorderLayout.WEST);
     }
+
 
     // Setters
     public void setFrameConfiguration() {
@@ -86,6 +87,7 @@ public class About extends JFrame implements ActionListener {
         this.developers = new JLabel(developers);
     }
 
+
     // Getters
     public JPanel getTextPanel() {
         return textPanel;
@@ -111,7 +113,7 @@ public class About extends JFrame implements ActionListener {
         return enviroment;
     }
 
-    // Ações !!!
+
     @Override
     public void actionPerformed(ActionEvent e) {
         dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
